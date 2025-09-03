@@ -1,4 +1,48 @@
-.container {
-  background-color: aqua;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #fafafa;
+}
 
+
+.container {
+  background-color: lightgray;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  max-width: 100%;
+  padding: 20px;
+  /* Ensures it doesn't stretch too wide on small screens */
+
+
+
+
+
+}
+
+.content {
+  flex-direction: column;
+}
+
+.title {
+  padding: 4px;
+  border-radius: 10px;
+  margin: 2;
+  height: 20px;
+}
+
+.addButton {
+  background-color: darkslategrey;
+  border-radius: 10px;
+  width: 80px;
+  height: 30px;
+  user-select: hover;
+  cursor: pointer;
 }

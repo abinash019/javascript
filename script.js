@@ -41,7 +41,7 @@ function renderTask() {
 }
 
 function editTask(index) {
-  const newTask = prompt("Edit task:", tasks[index]);
+  const newTask = prompt("Edit  task list:", tasks[index]);
   if (newTask) {
     tasks[index] = newTask
     renderTask()
