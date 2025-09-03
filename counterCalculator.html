@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>Hello World!</h1>
+  <h2 id="title">title</h2>
+  <button onclick="changeTitle()">change title</button>
+  <button id="btn">click</button>
+  <button id="message">message</button><br><br>
+
+  <input id="num1" type="number" placeholder="Enter your number"><br><br>
+  <input id="num2" type="number" placeholder="Enter your second Number"><br><br>
+  <button onclick="addNumber()">addNumber</button>
+  <p id="result">result</p>
+
+
+
+  <div class="container">
+    <input id="n1" type="number"><br><br>
+    <input id="n2" type="number"><br><br>
+    <select id="cal">
+      <option value="add">add</option>
+      <option value="sub">Subtract</option>
+      <option value="mul">multi</option>
+      <option value="div">divide</option>
+    </select>
+    <button onclick="calculator()">calculate</button><br>
+
+
+
+
+
+
+  </div>
+
+  <div>
+    <h2>Counter app</h2>
+    <p id="minute">counting...... 0</p>
+    <p id="count">counting...... 0</p>
+    <button onclick="counter()">Counter</button>
+    <button id="reset" onclick="reset()">Reset</button>
+
+  </div>
+
+</body>
+
+<script>
+  var minute = 0
+  var num = 0
+
+  setInterval(() => {
+    num += 1;
+    document.getElementById("count").textContent = "Second   :" + num
+
+    if (num == 60) {
+      minute += 1
+      num = 0
+      document.getElementById("minute").textContent = minute + "   minute"
+      document.getElementById("count").textContent = "Second   :  " + "" + num
+    }
+
+
+  },
+    1000
+  )
+  function reset() {
+    minute = 0
+    num = 0
+
+    document.getElementById("minute").textContent = minute + "   minute"
+    document.getElementById("count").textContent = "Second   :  " + "" + num
+
+
+
+
+  }
+
+
+
+  function calculator() {
+    const n1 = parseInt(document.getElementById("n1").value)
+    const n2 = parseInt(document.getElementById("n2").value)
+    const cal = document.getElementById("cal").value
+
+    if (isNaN(n1) || isNaN(n2)) {
+      document.getElementById("result").textContent = "Please enter valid numbers.";
+      return;
+    }
+
+    switch (cal) {
+      case "add":
+        { document.getElementById("result").textContent = "Result: " + (n1 + n2) }
+        break;
+
+      case "sub":
+        {
+          document.getElementById("result").textContent = "Result  :" + (n1 - n2)
+        }
+        break;
+      case "mul":
+        { document.getElementById("result").textContent = 'Result   :' + (n1 * n2) }
+        break;
+
+      case "div":
+        {
+          document.getElementById("result").textContent = 'Result   :' + (n1 / n2)
+        }
+        break;
+
+
+
+
+    }
+    document.getElementById("n1").value = '';
+    document.getElementById("n2").value = '';
+    document.getElementById("cal").value = 'add';
+
+    // document, getElementById.te
+
+  }
+
+
+
+  function addNumber() {
+    const n1 = parseInt(document.getElementById("num1").value)
+    const n2 = parseInt(document.getElementById("num2").value)
+    // console.log(n1, n2)
+    document.getElementById("result").textContent = "Result" + (n1 + n2);
+  }
+
+
+
+  function changeTitle() {
+    const title = document.getElementById("title")
+    title.textContent = "Welcome to the javaScript!"
+    title.style.color = "blue"
+    // title.style.width = 34
+  }
+
+  const button = document.getElementById("btn");
+  const message = document.getElementById("message");
+
+  button.addEventListener('click', () => {
+    message.textContent = "Button was clicked!";
+  }
+  )
+
+
+</script>
+
+</html>
