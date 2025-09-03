@@ -31,14 +31,11 @@ function renderTask() {
     <span>${task}</span>
     <div class='action-based'>
     <button class='edit' onclick = "editTask(${index})">edit</button>
-    <button class='edit' onclick = "deleteTask(${index})">delete</button>
+    <button class='delete' onclick = "deleteTask(${index})">delete</button>
     </div>
 
     `;
     taskList.appendChild(li)
-
-
-
   })
 
 }
